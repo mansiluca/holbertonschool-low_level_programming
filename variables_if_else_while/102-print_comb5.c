@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	int c, C, D, E;
+	int c, C;
 
 	for (c = 0; c <= 99; c++)
 	{
