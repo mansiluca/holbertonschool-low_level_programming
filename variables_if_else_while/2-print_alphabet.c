@@ -1,4 +1,4 @@
-#include <unistd.h>
+#include <stdio.h>
 
 /**
  * main - Entry point
@@ -12,9 +12,9 @@ int main(void)
 
 	while (c <= 'z')
 	{
-		ft_putchar(c);
+		putchar(c);
 		c++;
 	}
-	ft_putchar('\n');
+	putchar('\n');
 	return (0);
 }
