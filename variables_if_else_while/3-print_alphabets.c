@@ -16,7 +16,6 @@ int main(void)
 		putchar(c);
 		c++;
 	}
-	putchar(0);
 	while (C <= 'Z')
 	{
 		putchar(C);
