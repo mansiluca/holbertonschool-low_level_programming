@@ -40,3 +40,15 @@ void fizz_buzz(void)
 		}
 	}
 }
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+
+int main(void)
+{
+	fizz_buzz();
+	return (0);
+}
