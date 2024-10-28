@@ -14,6 +14,16 @@ int _atoi(char *s)
 
 	while (*s)
 	{
+		int MAX = 2147483647;
+		int MIN = -2147483648;
+
+		if (result > MAX / 10 || (result == MAX / 10 && (*s - '0') > MAX % 10))
+		{
+			if (sign == 1)
+				return (MAX);
+			else
+				return (MIN);
+		}
 		if (*s == '-')
 		{
 			if (started)
