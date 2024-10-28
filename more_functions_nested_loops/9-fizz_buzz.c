@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * fizz_buzz - prints the numbers from 1 to 100, but for multiples of three
