@@ -9,6 +9,13 @@
 
 void print_number(int n)
 {
+	if (n == -2147483648)
+	{
+		_putchar('-');
+		_putchar('2');
+		n %= 1000000000;
+		n = -n;
+	}
 	if (n < 0)
 	{
 		_putchar('-');
