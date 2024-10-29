@@ -10,8 +10,8 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-	unsigned int a = 0;
-	unsigned int b = 0;
+	int a = 0;
+	int b = 0;
 
 	while (dest[a] != '\0')
 	{
