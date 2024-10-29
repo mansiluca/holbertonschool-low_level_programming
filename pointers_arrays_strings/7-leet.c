@@ -23,7 +23,5 @@ char *leet(char *str)
 		}
 		i++;
 	}
-	str[i] = '\n';
-	str[i + 1] = '\0';
 	return (str);
 }
