@@ -7,3 +7,5 @@ functions_nested_loops/a.out
 functions_nested_loops/main.h.gch
 more_functions_nested_loops/a.out
 pointers_arrays_strings/a.out
+pointers_arrays_strings/0-memset
+pointers_arrays_strings/la.c
