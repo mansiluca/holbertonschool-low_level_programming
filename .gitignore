@@ -17,3 +17,5 @@ pointers_arrays_strings/7-print_chessboard
 pointers_arrays_strings/8-print_diagsums
 pointers_arrays_strings/3-strspn
 recursion/a.out
+argc_argv/nargs
+argc_argv/a.out
