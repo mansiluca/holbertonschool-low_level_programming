@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * main - prints the program's name, followed by a new line
@@ -11,15 +12,7 @@
 
 int main(int argc, char *argv[])
 {
-	int i = 0;
-
-	if (argc > 0)
-	{
-		while (argv[0][i] != '\0')
-		{
-			_putchar(argv[0][i]);
-			i++;
-		}
-		_putchar('\n');
-	}
+	(void)argc;
+	printf("%s\n", argv[0]);
+	return (0);
 }
