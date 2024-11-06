@@ -12,8 +12,8 @@
 
 int main(int argc, char *argv[])
 {
-	(void)argc;
 	int i = 0;
+	(void)argc;
 
 	while (i < argc)
 	{
