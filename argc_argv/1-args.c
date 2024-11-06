@@ -1,11 +1,9 @@
 #include "main.h"
 
 /**
- * main - prints the program's name, followed by a new line
- * it will print the name of the program
+ * main - prints the number of arguments passed into it.
  * @argc: argument count
  * @argv: argument vector
- *
  * Return: 0
  */
 
@@ -15,11 +13,11 @@ int main(int argc, char *argv[])
 
 	if (argc > 0)
 	{
-		while (argv[0][i] != '\0')
+		while (argv[i] != '\0')
 		{
-			_putchar(argv[0][i]);
 			i++;
 		}
+		_puts_recursion(argv[i]);
 		_putchar('\n');
 	}
 }
