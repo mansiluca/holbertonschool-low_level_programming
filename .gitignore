@@ -22,3 +22,5 @@ argc_argv/a.out
 argc_argv/a.out
 argc_argv/mul
 malloc_free/a.out
+malloc_free/4-free_grid
+malloc_free/3-alloc_grid
