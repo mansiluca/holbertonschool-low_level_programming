@@ -24,3 +24,6 @@ argc_argv/mul
 malloc_free/a.out
 malloc_free/4-free_grid
 malloc_free/3-alloc_grid
+more_malloc_free/1-string_nconcat
+more_malloc_free/3-array_range
+more_malloc_free/2-calloc
