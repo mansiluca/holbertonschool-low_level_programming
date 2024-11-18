@@ -6,7 +6,6 @@
  * @array: array to search
  * @size: size of the array
  * @cmp: function pointer
- *
  * Return: index of the first element for which the cmp function does not return 0
  */
 
