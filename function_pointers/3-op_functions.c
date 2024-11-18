@@ -56,7 +56,7 @@ int op_div(int a, int b)
 }
 
 /**
- * op_div - module two intergers
+ * op_mod - module two integers
  * @a: first integer
  * @b: second integer
  * Return: result of the module of a by b
