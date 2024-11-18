@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
 	}
 
 	operator= argv[2];
-	operator= argv[2];
 	operation = get_op_func(operator);
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
