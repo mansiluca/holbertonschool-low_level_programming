@@ -10,6 +10,7 @@
 
 void print_all(const char * const format, ...)
 {
+	va_list args;
 	unsigned int i = 0;
 	unsigned int j;
 	const char *separator = "";
@@ -22,8 +23,6 @@ void print_all(const char * const format, ...)
 		{NULL, NULL}
 	};
 
-	va_list args;
-
 	va_start(args, format);
 
 	while (format && format[i])
@@ -33,9 +32,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == p[j].c[0])
 			{
+				printf("%s", separator);
 				p[j].f(args);
 				separator = ", ";
-				printf("%s", separator);
 				break;
 			}
 			j++;
