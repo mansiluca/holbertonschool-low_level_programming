@@ -30,7 +30,6 @@ void print_all(const char * const format, ...)
 		j = 0;
 		while (p[j].c != NULL)
 		{
-			printf("Nous somme sur le caractère %c\n", format[i]);
 			if (format[i] == p[j].c[0])
 			{
 				p[j].f(args);
@@ -42,7 +41,7 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 	}
-
+	printf("\n");
 	va_end(args);
 }
 
