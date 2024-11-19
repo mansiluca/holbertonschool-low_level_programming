@@ -5,7 +5,7 @@
 int (*get_op_func(char *s))(int, int);
 
 /**
- * @brief
+ * main - Entry point for the calculator program
  * @argc: Argument count
  * @argv: Argument vector
  *
@@ -17,13 +17,14 @@ int main(int argc, char *argv[])
 	char *operator;
 	int num1, num2;
 	int result;
+
 	if (argc != 4)
 	{
 		printf("Usage: %s num1 operator num2\n", argv[0]);
 		return (1);
 	}
 
-	operator= argv[2];
+	operator = argv[2];
 	operation = get_op_func(operator);
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
