@@ -2,6 +2,8 @@
 #include "function_pointers.h"
 #include <stdio.h>
 
+int (*get_op_func(char *s))(int, int);
+
 /**
  * main - Entry point for the calculator program
  * @argc: Argument count
@@ -9,7 +11,6 @@
  *
  * Return: Always 0 (Success)
  */
-
 int main(int argc, char *argv[])
 {
 	int (*operation)(int, int);
