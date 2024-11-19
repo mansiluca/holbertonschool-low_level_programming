@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include "function_pointers.h"
 
 /**
@@ -6,7 +6,7 @@
  * @array: array to search
  * @size: size of the array
  * @cmp: function pointer
- * Return: index of the first element for which the cmp function does not return 0
+ * Return: index of the first element for which the
  */
 
 int int_index(int *array, int size, int (*cmp)(int))
