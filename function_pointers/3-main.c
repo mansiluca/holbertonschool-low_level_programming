@@ -1,15 +1,6 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "function_pointers.h"
-
-/**
- * get_op_func - selects the correct function to perform the operation
- * @s: The operator passed as argument to the program
- *
- * Return: A pointer to the function that corresponds to the operator given
- */
-
-int (*get_op_func(char *s))(int, int);
+#include <stdio.h>
 
 /**
  * main - Entry point for the calculator program
@@ -18,11 +9,13 @@ int (*get_op_func(char *s))(int, int);
  *
  * Return: Always 0 (Success)
  */
+
 int main(int argc, char *argv[])
 {
 	int (*operation)(int, int);
 	char *operator;
-	int num1, num2;
+	int num1;
+	int num2;
 	int result;
 
 	if (argc != 4)
