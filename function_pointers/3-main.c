@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include "function_pointers.h"
 
+/**
+ * get_op_func - selects the correct function to perform the operation
+ * @s: The operator passed as argument to the program
+ *
+ * Return: A pointer to the function that corresponds to the operator given
+ */
+
 int (*get_op_func(char *s))(int, int);
 
 /**
@@ -24,11 +31,23 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
+	if (argv[2][1] != '\0')
+	{
+		printf("Error\n");
+		return (1);
+	}
+
 	operator = argv[2];
 	operation = get_op_func(operator);
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 	if (operation == NULL)
+	{
+		printf("Error\n");
+		return (1);
+	}
+
+	if ((*operator == '/' || *operator == '%') && num2 == 0)
 	{
 		printf("Error\n");
 		return (1);
