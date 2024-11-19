@@ -10,8 +10,9 @@
 
 void print_all(const char * const format, ...)
 {
-	int i = 0, j;
-	char *separator = "";
+	unsigned int i = 0;
+	unsigned int j;
+	const char *separator = "";
 
 	print_t p[] = {
 		{"c", print_char},
@@ -25,7 +26,7 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	while (format && format[i] != '\0')
+	while (format && format[i])
 	{
 		j = 0;
 		while (p[j].c != NULL)
