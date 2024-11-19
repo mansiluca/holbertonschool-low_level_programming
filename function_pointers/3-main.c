@@ -27,8 +27,8 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		printf("Usage: %s num1 operator num2\n", argv[0]);
-		return (1);
+		printf("Error\n", argv[0]);
+		exit(98);
 	}
 
 	operator = argv[2];
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	if (operation == NULL)
 	{
 		printf("Error\n");
-		return (1);
+		exit(99);
 	}
 
 	result = operation(num1, num2);
