@@ -31,12 +31,6 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	if (argv[2][1] != '\0')
-	{
-		printf("Error\n");
-		return (1);
-	}
-
 	operator = argv[2];
 	operation = get_op_func(operator);
 	num1 = atoi(argv[1]);
