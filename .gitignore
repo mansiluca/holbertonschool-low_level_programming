@@ -35,3 +35,4 @@ function_pointers/calc
 variadic_functions/a.out
 variadic_functions/d
 variadic_functions/build/Release/0-sum_them_all.o
+.vscode/tasks.json
