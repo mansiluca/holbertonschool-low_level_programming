@@ -37,3 +37,4 @@ variadic_functions/d
 variadic_functions/build/Release/0-sum_them_all.o
 .vscode/tasks.json
 doubly_linked_lists/k
+file_io/1-main.c
