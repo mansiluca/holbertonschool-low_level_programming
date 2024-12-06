@@ -79,5 +79,5 @@ int main(int argc, char *argv[])
 
 	copy_file(argv[1], argv[2]);
 
-	return 0;
+	return (0);
 }
