@@ -9,13 +9,19 @@
 /**
  * print_error_and_exit - prints an error message and exits
  * @message: the error message
- * @file: the file name
+ * @value: the value to print (string or int)
  * @exit_code: the exit code
  */
 
-void print_error_and_exit(const char *message, const char *file, int exit_code)
+void print_error_and_exit(const char *message, const char *value, int exit_code)
 {
-	dprintf(STDERR_FILENO, message, file);
+	dprintf(STDERR_FILENO, message, value);
+	exit(exit_code);
+}
+
+void print_error_and_exit_fd(const char *message, int value, int exit_code)
+{
+	dprintf(STDERR_FILENO, message, value);
 	exit(exit_code);
 }
 
@@ -56,10 +62,10 @@ void copy_file(const char *file_from, const char *file_to)
 		print_error_and_exit("Error: Can't read from file %s\n", file_from, 98);
 
 	if (close(fd_from) == -1)
-		print_error_and_exit("Error: Can't close fd %d\n", fd_from, 100);
+		print_error_and_exit_fd("Error: Can't close fd %d\n", fd_from, 100);
 
 	if (close(fd_to) == -1)
-		print_error_and_exit("Error: Can't close fd %d\n", fd_to, 100);
+		print_error_and_exit_fd("Error: Can't close fd %d\n", fd_to, 100);
 }
 
 /**
