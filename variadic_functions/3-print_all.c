@@ -8,7 +8,7 @@
  * Return: void
  */
 
-void print_all(const char * const format, ...)
+void print_all(const char *const format, ...)
 {
 	va_list args;
 	unsigned int i = 0;
@@ -20,8 +20,7 @@ void print_all(const char * const format, ...)
 		{"i", print_int},
 		{"f", print_float},
 		{"s", print_string},
-		{NULL, NULL}
-	};
+		{NULL, NULL}};
 
 	va_start(args, format);
 
@@ -91,4 +90,10 @@ void print_string(va_list args)
 	if (str == NULL)
 		str = "(nil)";
 	printf("%s", str);
+}
+
+int main(void)
+{
+	print_all("ceis", 'H', 3, "lberton");
+	return (0);
 }
