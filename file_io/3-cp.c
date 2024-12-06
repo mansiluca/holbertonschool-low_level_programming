@@ -6,11 +6,24 @@
 
 #define BUFFER_SIZE 1024
 
+/**
+ * print_error_and_exit - prints an error message and exits
+ * @message: the error message
+ * @file: the file name
+ * @exit_code: the exit code
+ */
+
 void print_error_and_exit(const char *message, const char *file, int exit_code)
 {
 	dprintf(STDERR_FILENO, message, file);
 	exit(exit_code);
 }
+
+/**
+ * copy_file - copies the content of a file to another file
+ * @file_from: the file to copy from
+ * @file_to: the file to copy to
+ */
 
 void copy_file(const char *file_from, const char *file_to)
 {
@@ -48,6 +61,13 @@ void copy_file(const char *file_from, const char *file_to)
 	if (close(fd_to) == -1)
 		print_error_and_exit("Error: Can't close fd %d\n", fd_to, 100);
 }
+
+/**
+ * main - copies the content of a file to another file
+ * @argc: the number of arguments
+ * @argv: the arguments
+ * Return: 0 on success
+ */
 
 int main(int argc, char *argv[])
 {
