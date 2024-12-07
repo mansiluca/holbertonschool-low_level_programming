@@ -7,30 +7,22 @@
 #define BUFFER_SIZE 1024
 
 /**
- * print_error_and_exit - prints an error message and exits
- * @message: the error message
- * @value: the value to print (string or int)
- * @exit_code: the exit code
+ * handle_error - Prints an error message and exits
+ * @message: The error message
+ * @value: The value to print (string or int)
+ * @exit_code: The exit code
  */
-
-void print_error_and_exit(const char *message, const char *value, int exit_code)
-{
-	dprintf(STDERR_FILENO, message, value);
-	exit(exit_code);
-}
-
-void print_error_and_exit_fd(const char *message, int value, int exit_code)
+void handle_error(const char *message, int value, int exit_code)
 {
 	dprintf(STDERR_FILENO, message, value);
 	exit(exit_code);
 }
 
 /**
- * copy_file - copies the content of a file to another file
- * @file_from: the file to copy from
- * @file_to: the file to copy to
+ * copy_file - Copies the content of a file to another file
+ * @file_from: The file to copy from
+ * @file_to: The file to copy to
  */
-
 void copy_file(const char *file_from, const char *file_to)
 {
 	int fd_from, fd_to, read_bytes, write_bytes;
@@ -38,13 +30,13 @@ void copy_file(const char *file_from, const char *file_to)
 
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
-		print_error_and_exit("Error: Can't read from file %s\n", file_from, 98);
+		handle_error("Error: Can't read from file %s\n", (int)file_from, 98);
 
 	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
 		close(fd_from);
-		print_error_and_exit("Error: Can't write to %s\n", file_to, 99);
+		handle_error("Error: Can't write to %s\n", (int)file_to, 99);
 	}
 
 	while ((read_bytes = read(fd_from, buffer, BUFFER_SIZE)) > 0)
@@ -54,27 +46,26 @@ void copy_file(const char *file_from, const char *file_to)
 		{
 			close(fd_from);
 			close(fd_to);
-			print_error_and_exit("Error: Can't write to %s\n", file_to, 99);
+			handle_error("Error: Can't write to %s\n", (int)file_to, 99);
 		}
 	}
 
 	if (read_bytes == -1)
-		print_error_and_exit("Error: Can't read from file %s\n", file_from, 98);
+		handle_error("Error: Can't read from file %s\n", (int)file_from, 98);
 
 	if (close(fd_from) == -1)
-		print_error_and_exit_fd("Error: Can't close fd %d\n", fd_from, 100);
+		handle_error("Error: Can't close fd %d\n", fd_from, 100);
 
 	if (close(fd_to) == -1)
-		print_error_and_exit_fd("Error: Can't close fd %d\n", fd_to, 100);
+		handle_error("Error: Can't close fd %d\n", fd_to, 100);
 }
 
 /**
- * main - copies the content of a file to another file
- * @argc: the number of arguments
- * @argv: the arguments
+ * main - Copies the content of a file to another file
+ * @argc: The number of arguments
+ * @argv: The arguments
  * Return: 0 on success
  */
-
 int main(int argc, char *argv[])
 {
 	if (argc != 3)
