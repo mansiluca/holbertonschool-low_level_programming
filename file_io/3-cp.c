@@ -28,12 +28,16 @@ void copy_file(const char *file_from, const char *file_to)
 	int fd_from, fd_to, read_bytes, write_bytes;
 	char buffer[BUFFER_SIZE];
 
-	if (access(file_from, F_OK) == -1)
-		handle_error("Error: File %s does not exist\n", file_from, 98);
-	if (access(file_from, R_OK) == -1)
-		handle_error("Error: No read permission for file %s\n", file_from, 98);
-	if (access(file_to, W_OK) == -1)
-		handle_error("Error: No write permission for file %s\n", file_to, 98);
+	fd_from = open(file_from, O_RDONLY);
+	if (fd_from == -1)
+		handle_error("Error: Can't read from file %s\n", file_from, 98);
+	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	if (fd_to == -1)
+	{
+		close(fd_from);
+		handle_error("Error: Can't write to %s\n", file_to, 99);
+	}
+
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
 		handle_error("Error: Can't read from file %s\n", file_from, 98);
