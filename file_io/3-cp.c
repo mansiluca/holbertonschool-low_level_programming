@@ -35,11 +35,6 @@ void copy_file(const char *file_from, const char *file_to)
 		handle_error("Error: Can't read from file %s\n", file_from, 98);
 
 	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (fd_to == -1)
-	{
-		close(fd_from);
-		handle_error("Error: Can't write to %s\n", file_to, 99);
-	}
 
 	copy_content(fd_from, fd_to, file_from, file_to);
 
