@@ -38,9 +38,8 @@ void copy_file(const char *file_from, const char *file_to)
 	if (fd_to == -1)
 	{
 		close(fd_from);
-		handle_error("Error: Can't write to %s\n", file_to, 99);
+		handle_error("Error: Can't write to %s\n", file_to, 98);
 	}
-
 
 	copy_content(fd_from, fd_to, file_from, file_to);
 
