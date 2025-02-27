@@ -37,7 +37,7 @@ This repository is part of the Holberton School curriculum. It includes various 
 Clone the repository to your local machine:
 
 ```sh
-git clone https://github.com/yourusername/holbertonschool-low_level_programming.git
+git clone https://github.com/mansiluca/holbertonschool-low_level_programming.git
 ```
 
 Navigate to the project directory:
